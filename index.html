@@ -1,1 +1,131 @@
-dgsdg
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TGG - Holding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans overflow-x-hidden">
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(sec => {
+      sec.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000');
+      observer.observe(sec);
+    });
+  });
+</script>
+
+  <!-- Header -->
+  <header class="bg-black/70 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-wide">TGG - Holding</div>
+      <nav class="space-x-6 text-sm uppercase tracking-wider">
+        <a href="#" class="hover:text-white">Unternehmen</a>
+        <a href="#" class="hover:text-white">Produkte</a>
+        <a href="#" class="hover:text-white">Nachhaltigkeit</a>
+        <a href="#" class="hover:text-white">Karriere</a>
+        <a href="#" class="hover:text-white">Investoren</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-[80vh] flex items-center justify-center">
+    <img src="https://images.unsplash.com/photo-1544473244-f6895e69ad8b" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+    <div class="relative z-10 max-w-4xl text-center px-6">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">Das Unmögliche,
+        <span class="text-red-500">ist nur unmöglich,</span></h1>
+      <p class="text-lg text-gray-300 mb-8">wenn man es nicht versucht. Techologische Lösungen für Fortschritt.</p>
+      
+    </div>
+  </section>
+
+  <!-- Key Figures -->
+  <section class="bg-gray-900 py-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6 text-center">
+      <div><p class="text-4xl font-bold text-red-500">25.000+</p><p>Mitarbeitende</p></div>
+      <div><p class="text-4xl font-bold text-red-500">120+</p><p>Standorte</p></div>
+      <div><p class="text-4xl font-bold text-red-500">€8+ Mrd</p><p>Umsatz</p></div>
+      <div><p class="text-4xl font-bold text-red-500">70+</p><p>Länder</p></div>
+    </div>
+  </section>
+
+  <!-- Business Areas -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12">Geschäftsbereiche</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">Land & Sicherheit</h3>
+          <p class="text-gray-400">Moderne Systeme für Schutz, Einsatzfähigkeit und Ausbildung.</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">Mobilität</h3>
+          <p class="text-gray-400">Antriebstechnologien und Lösungen für nachhaltige Fortbewegung.</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">Digitalisierung</h3>
+          <p class="text-gray-400">Simulation, Vernetzung und datengetriebene Systeme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News / Focus -->
+  <section class="bg-gray-900 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12">Im Fokus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-2xl overflow-hidden bg-black">
+          <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde" class="h-64 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Strategischer Partner in Europa</h3>
+            <p class="text-gray-400">Technologie und Verantwortung für Sicherheit und Stabilität.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-black">
+          <img src="https://images.unsplash.com/photo-1581091870622-3d5c4a3f27f2" class="h-64 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Nachhaltige Industrie</h3>
+            <p class="text-gray-400">CO₂‑Reduktion und Innovation als Teil der Strategie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400">
+      <div>
+        <p class="font-semibold text-white mb-2">TGG - Holding</p>
+        <p>Hamburg · Deutschland</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-2">Links</p>
+        <ul class="space-y-1">
+          <li>Impressum</li>
+          <li>Datenschutz</li>
+          <li>Kontakt</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-2">© 2026</p>
+        <p>Urheberrechtlich geshützt</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
