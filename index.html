@@ -46,7 +46,7 @@
     
     /* Video Overlay für bessere Lesbarkeit */
     .video-overlay {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.5));
     }
     
     /* Smooth Scroll */
@@ -61,7 +61,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans overflow-x-hidden">
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden">
 
   <!-- Skip to main content für Screenreader -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-500 text-white px-4 py-2 rounded">
@@ -69,7 +69,7 @@
   </a>
 
   <!-- Header -->
-  <header class="bg-black/70 backdrop-blur sticky top-0 z-50" role="banner">
+  <header class="bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm border-b border-gray-200" role="banner">
     <div class="max-w-7xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="text-2xl font-bold tracking-wide">
@@ -79,10 +79,10 @@
         </div>
         
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider" role="navigation" aria-label="Hauptnavigation">
-          <a href="#business" class="hover:text-white transition-colors duration-200">Unternehmen</a>
-          <a href="#focus" class="hover:text-white transition-colors duration-200">Im Fokus</a>
-          <a href="#contact" class="hover:text-white transition-colors duration-200">Kontakt</a>
+        <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider text-gray-700" role="navigation" aria-label="Hauptnavigation">
+          <a href="#business" class="hover:text-red-500 transition-colors duration-200">Unternehmen</a>
+          <a href="#focus" class="hover:text-red-500 transition-colors duration-200">Im Fokus</a>
+          <a href="#contact" class="hover:text-red-500 transition-colors duration-200">Kontakt</a>
         </nav>
         
         <!-- Mobile Menu Button -->
@@ -108,9 +108,9 @@
         aria-label="Mobile Navigation"
       >
         <div class="pt-4 pb-2 space-y-2">
-          <a href="#business" class="block py-2 hover:text-white transition-colors">Unternehmen</a>
-          <a href="#focus" class="block py-2 hover:text-white transition-colors">Im Fokus</a>
-          <a href="#contact" class="block py-2 hover:text-white transition-colors">Kontakt</a>
+          <a href="#business" class="block py-2 text-gray-700 hover:text-red-500 transition-colors">Unternehmen</a>
+          <a href="#focus" class="block py-2 text-gray-700 hover:text-red-500 transition-colors">Im Fokus</a>
+          <a href="#contact" class="block py-2 text-gray-700 hover:text-red-500 transition-colors">Kontakt</a>
         </div>
       </nav>
     </div>
@@ -119,9 +119,9 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative h-[80vh] flex items-center justify-center" aria-labelledby="hero-heading">
+    <section class="relative h-[80vh] flex items-center justify-center bg-gray-100" aria-labelledby="hero-heading">
       <video 
-        class="absolute inset-0 w-full h-full object-cover opacity-40" 
+        class="absolute inset-0 w-full h-full object-cover opacity-20" 
         autoplay 
         muted 
         loop 
@@ -135,58 +135,58 @@
       <div class="absolute inset-0 video-overlay"></div>
       
       <div class="relative z-10 max-w-4xl text-center px-6">
-        <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold mb-6">
+        <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
           Das Unmögliche 
           <span class="text-red-500">möglich machen.</span>
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-8">
+        <p class="text-lg md:text-xl text-gray-700 mb-8">
           Technologische Lösungen für Fortschritt.
         </p>
       </div>
     </section>
 
     <!-- Key Figures -->
-    <section class="bg-gray-900 py-16" aria-labelledby="key-figures-heading">
+    <section class="bg-gray-50 py-16" aria-labelledby="key-figures-heading">
       <h2 id="key-figures-heading" class="sr-only">Kennzahlen</h2>
       <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center">
         <div class="smooth-appear">
           <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="3 Mitarbeitende">3</p>
-          <p class="text-gray-300 mt-2">Mitarbeitende</p>
+          <p class="text-gray-700 mt-2">Mitarbeitende</p>
         </div>
         <div class="smooth-appear">
           <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="1 Standort">1</p>
-          <p class="text-gray-300 mt-2">Standort</p>
+          <p class="text-gray-700 mt-2">Standort</p>
         </div>
         <div class="smooth-appear">
           <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="Mehr als 5 Projekte">+5</p>
-          <p class="text-gray-300 mt-2">Projekte</p>
+          <p class="text-gray-700 mt-2">Projekte</p>
         </div>
         <div class="smooth-appear">
           <p class="text-4xl md:text-5xl font-bold text-red-500">Unendliche</p>
-          <p class="text-gray-300 mt-2">Menge an Spaß!</p>
+          <p class="text-gray-700 mt-2">Menge an Spaß!</p>
         </div>
       </div>
     </section>
 
     <!-- Business Areas -->
-    <section id="business" class="py-20 smooth-appear" aria-labelledby="business-heading">
+    <section id="business" class="py-20 smooth-appear bg-white" aria-labelledby="business-heading">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 id="business-heading" class="text-4xl font-bold mb-12">Geschäftsbereiche</h2>
+        <h2 id="business-heading" class="text-4xl font-bold mb-12 text-gray-900">Geschäftsbereiche</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
-            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Aerospace</h3>
-            <p class="text-gray-400">Raumfahrt ist eine Sache für alle Menschen.</p>
+          <article class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1 border border-gray-200">
+            <h3 class="text-xl font-semibold mb-3 text-red-500">TGG Aerospace</h3>
+            <p class="text-gray-600">Raumfahrt ist eine Sache für alle Menschen.</p>
           </article>
           
-          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
-            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Studios</h3>
-            <p class="text-gray-400">Qualitative Videospiele und Minecraft Server-Projekte.</p>
+          <article class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1 border border-gray-200">
+            <h3 class="text-xl font-semibold mb-3 text-red-500">TGG Studios</h3>
+            <p class="text-gray-600">Qualitative Videospiele und Minecraft Server-Projekte.</p>
           </article>
           
-          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
-            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Technology</h3>
-            <p class="text-gray-400">App-Entwicklung, Web-Entwicklung, Assembly, etc. Nichts ist unmöglich.</p>
+          <article class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1 border border-gray-200">
+            <h3 class="text-xl font-semibold mb-3 text-red-500">TGG Technology</h3>
+            <p class="text-gray-600">App-Entwicklung, Web-Entwicklung, Assembly, etc. Nichts ist unmöglich.</p>
           </article>
           
         </div>
@@ -194,12 +194,12 @@
     </section>
 
     <!-- News / Focus -->
-    <section id="focus" class="bg-gray-900 py-20 smooth-appear" aria-labelledby="focus-heading">
+    <section id="focus" class="bg-gray-50 py-20 smooth-appear" aria-labelledby="focus-heading">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 id="focus-heading" class="text-4xl font-bold mb-12">Im Fokus</h2>
+        <h2 id="focus-heading" class="text-4xl font-bold mb-12 text-gray-900">Im Fokus</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <article class="rounded-2xl overflow-hidden bg-black hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+          <article class="rounded-2xl overflow-hidden bg-white hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1 border border-gray-200">
             <img 
               src="assets/images/Screenshot 2026-01-26 173220.png" 
               alt="Screenshot der Craft Universe App Entwicklung"
@@ -207,14 +207,14 @@
               class="h-64 w-full object-cover" 
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">App-Entwicklung geht in die nächste Runde</h3>
-              <p class="text-gray-400">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">App-Entwicklung geht in die nächste Runde</h3>
+              <p class="text-gray-600">
                 Die Entwicklung der Craft Universe App geht voran. Erster Android-Testrelease für den 14.02.2026 geplant.
               </p>
             </div>
           </article>
           
-          <article class="rounded-2xl overflow-hidden bg-black hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+          <article class="rounded-2xl overflow-hidden bg-white hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1 border border-gray-200">
             <img 
               src="assets/images/WhatsApp Image 2026-01-13 at 21.18.35 (2).jpeg" 
               alt="Antriebstest der Bau 2 Nachfolger-Rakete"
@@ -222,8 +222,8 @@
               class="h-64 w-full object-cover" 
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Erste Antriebstests</h3>
-              <p class="text-gray-400">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Erste Antriebstests</h3>
+              <p class="text-gray-600">
                 Die ersten Antriebstests des Nachfolgers der erfolgreichen Bau 2 Rakete schreiten voran.
               </p>
             </div>
@@ -235,8 +235,8 @@
   </main>
 
   <!-- Footer -->
-  <footer id="contact" class="bg-black py-12" role="contentinfo">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400">
+  <footer id="contact" class="bg-gray-900 text-gray-300 py-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
       
       <div>
         <p class="font-semibold text-white mb-2">TGG Holding</p>
@@ -248,9 +248,9 @@
       <nav aria-label="Footer Navigation">
         <p class="font-semibold text-white mb-2">Links</p>
         <ul class="space-y-1">
-          <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
-          <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>
-          <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+          <li><a href="/impressum" class="hover:text-red-400 transition-colors">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-red-400 transition-colors">Datenschutz</a></li>
+          <li><a href="/kontakt" class="hover:text-red-400 transition-colors">Kontakt</a></li>
         </ul>
       </nav>
       
