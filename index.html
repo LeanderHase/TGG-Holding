@@ -3,129 +3,330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TGG - Holding</title>
+  <meta name="description" content="TGG Holding - Technologische Lösungen für Fortschritt in Aerospace, Gaming und Technology" />
+  <meta name="keywords" content="TGG Holding, Aerospace, Studios, Technology, App Entwicklung, Raumfahrt" />
+  <meta name="author" content="TGG Holding" />
+  
+  <!-- Open Graph Meta Tags für Social Media -->
+  <meta property="og:title" content="TGG Holding - Das Unmögliche möglich machen" />
+  <meta property="og:description" content="Technologische Lösungen für Fortschritt" />
+  <meta property="og:type" content="website" />
+  
+  <title>TGG Holding - Technologische Lösungen für Fortschritt</title>
+  
+  <!-- Preload wichtiger Ressourcen -->
+  <link rel="preload" as="video" href="assets/images/Herobanner.mp4" />
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Custom Styles für Animationen und Übergänge */
+    .smooth-appear {
+      opacity: 0;
+      transform: translateY(3rem);
+      transition: all 1s ease-out;
+    }
+    
+    .smooth-appear.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile Menu Animation */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    
+    /* Video Overlay für bessere Lesbarkeit */
+    .video-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    }
+    
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Focus Styles für Accessibility */
+    a:focus, button:focus {
+      outline: 2px solid #ef4444;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans overflow-x-hidden">
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    sections.forEach(sec => {
-      sec.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000');
-      observer.observe(sec);
-    });
-  });
-</script>
+  <!-- Skip to main content für Screenreader -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-500 text-white px-4 py-2 rounded">
+    Zum Hauptinhalt springen
+  </a>
 
   <!-- Header -->
-  <header class="bg-black/70 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="text-2xl font-bold tracking-wide">TGG - Holding</div>
-      <nav class="space-x-6 text-sm uppercase tracking-wider">
-        <a href="#" class="hover:text-white">Unternehmen</a>
-        <a href="#" class="hover:text-white">Produkte</a>
+  <header class="bg-black/70 backdrop-blur sticky top-0 z-50" role="banner">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="text-2xl font-bold tracking-wide">
+          <a href="#" class="hover:text-red-500 transition-colors" aria-label="TGG Holding Startseite">
+            TGG Holding
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-wider" role="navigation" aria-label="Hauptnavigation">
+          <a href="#business" class="hover:text-white transition-colors duration-200">Unternehmen</a>
+          <a href="#focus" class="hover:text-white transition-colors duration-200">Im Fokus</a>
+          <a href="#contact" class="hover:text-white transition-colors duration-200">Kontakt</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-button" 
+          class="md:hidden focus:outline-none"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <nav 
+        id="mobile-menu" 
+        class="mobile-menu md:hidden"
+        role="navigation"
+        aria-label="Mobile Navigation"
+      >
+        <div class="pt-4 pb-2 space-y-2">
+          <a href="#business" class="block py-2 hover:text-white transition-colors">Unternehmen</a>
+          <a href="#focus" class="block py-2 hover:text-white transition-colors">Im Fokus</a>
+          <a href="#contact" class="block py-2 hover:text-white transition-colors">Kontakt</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative h-[80vh] flex items-center justify-center">
-<video class="absolute inset-0 w-full h-full object-cover opacity-40" autoplay muted loop playsinline>
-<source src="assets/images/Herobanner.mp4" type="video/mp4" />
-Dein Browser unterstützt keine Videos.
-</video>
-    <div class="relative z-10 max-w-4xl text-center px-6">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Das Unmögliche 
-        <span class="text-red-500">möglich machen.</span></h1>
-      <p class="text-lg text-gray-300 mb-8">Techologische Lösungen für Fortschritt.</p>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center" aria-labelledby="hero-heading">
+      <video 
+        class="absolute inset-0 w-full h-full object-cover opacity-40" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        loading="lazy"
+        aria-hidden="true"
+      >
+        <source src="assets/images/Herobanner.mp4" type="video/mp4" />
+        Dein Browser unterstützt keine Videos.
+      </video>
+      <div class="absolute inset-0 video-overlay"></div>
       
-    </div>
-  </section>
+      <div class="relative z-10 max-w-4xl text-center px-6">
+        <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold mb-6">
+          Das Unmögliche 
+          <span class="text-red-500">möglich machen.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">
+          Technologische Lösungen für Fortschritt.
+        </p>
+      </div>
+    </section>
 
-  <!-- Key Figures -->
-  <section class="bg-gray-900 py-16">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6 text-center">
-      <div><p class="text-4xl font-bold text-red-500">3</p><p>Mitarbeitende</p></div>
-      <div><p class="text-4xl font-bold text-red-500">1</p><p>Standort</p></div>
-      <div><p class="text-4xl font-bold text-red-500">+5</p><p>Projekte</p></div>
-      <div><p class="text-4xl font-bold text-red-500">Unendliche</p><p>Menge an Spaß!</p></div>
-    </div>
-  </section>
-
-  <!-- Business Areas -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12">Geschäftsbereiche</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">TGG - Aerospace</h3>
-          <p class="text-gray-400">Raumfahrt ist Sache für alle Menschen.</p>
+    <!-- Key Figures -->
+    <section class="bg-gray-900 py-16" aria-labelledby="key-figures-heading">
+      <h2 id="key-figures-heading" class="sr-only">Kennzahlen</h2>
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center">
+        <div class="smooth-appear">
+          <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="3 Mitarbeitende">3</p>
+          <p class="text-gray-300 mt-2">Mitarbeitende</p>
         </div>
-        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">TGG - Studios</h3>
-          <p class="text-gray-400">Qualitative Videospiele und Minecraft Sever-Projekte.</p>
+        <div class="smooth-appear">
+          <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="1 Standort">1</p>
+          <p class="text-gray-300 mt-2">Standort</p>
         </div>
-        <div class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">TGG - Technology</h3>
-          <p class="text-gray-400">App development, Web development, Assembley, etc. Es ist nichts unmöglich .</p>
+        <div class="smooth-appear">
+          <p class="text-4xl md:text-5xl font-bold text-red-500" aria-label="Mehr als 5 Projekte">+5</p>
+          <p class="text-gray-300 mt-2">Projekte</p>
+        </div>
+        <div class="smooth-appear">
+          <p class="text-4xl md:text-5xl font-bold text-red-500">Unendliche</p>
+          <p class="text-gray-300 mt-2">Menge an Spaß!</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- News / Focus -->
-  <section class="bg-gray-900 py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12">Im Fokus</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="rounded-2xl overflow-hidden bg-black">
-          <img src="assets/images/Screenshot 2026-01-26 173220.png" class="h-64 w-full object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">App Entwicklung geht in die nächste Runde</h3>
-            <p class="text-gray-400">Die Entwicklung der Craft Universe App geht voran. Erster Android Testrelease für den 14.2.2026 geplant.             </p>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden bg-black">
-          <img src="assets/images/WhatsApp Image 2026-01-13 at 21.18.35 (2).jpeg" class="h-64 w-full object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Erste Antriebstests</h3>
-            <p class="text-gray-400">Die ersten Antriebstests des Nachfolgers der erfolgreichen Bau 2 Rakete schreiten voran.</p>
-          </div>
+    <!-- Business Areas -->
+    <section id="business" class="py-20 smooth-appear" aria-labelledby="business-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 id="business-heading" class="text-4xl font-bold mb-12">Geschäftsbereiche</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Aerospace</h3>
+            <p class="text-gray-400">Raumfahrt ist eine Sache für alle Menschen.</p>
+          </article>
+          
+          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Studios</h3>
+            <p class="text-gray-400">Qualitative Videospiele und Minecraft Server-Projekte.</p>
+          </article>
+          
+          <article class="bg-gray-900 rounded-2xl p-8 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+            <h3 class="text-xl font-semibold mb-3 text-red-400">TGG Technology</h3>
+            <p class="text-gray-400">App-Entwicklung, Web-Entwicklung, Assembly, etc. Nichts ist unmöglich.</p>
+          </article>
+          
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- News / Focus -->
+    <section id="focus" class="bg-gray-900 py-20 smooth-appear" aria-labelledby="focus-heading">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 id="focus-heading" class="text-4xl font-bold mb-12">Im Fokus</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <article class="rounded-2xl overflow-hidden bg-black hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+            <img 
+              src="assets/images/Screenshot 2026-01-26 173220.png" 
+              alt="Screenshot der Craft Universe App Entwicklung"
+              loading="lazy"
+              class="h-64 w-full object-cover" 
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">App-Entwicklung geht in die nächste Runde</h3>
+              <p class="text-gray-400">
+                Die Entwicklung der Craft Universe App geht voran. Erster Android-Testrelease für den 14.02.2026 geplant.
+              </p>
+            </div>
+          </article>
+          
+          <article class="rounded-2xl overflow-hidden bg-black hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1">
+            <img 
+              src="assets/images/WhatsApp Image 2026-01-13 at 21.18.35 (2).jpeg" 
+              alt="Antriebstest der Bau 2 Nachfolger-Rakete"
+              loading="lazy"
+              class="h-64 w-full object-cover" 
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Erste Antriebstests</h3>
+              <p class="text-gray-400">
+                Die ersten Antriebstests des Nachfolgers der erfolgreichen Bau 2 Rakete schreiten voran.
+              </p>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-black py-12">
+  <footer id="contact" class="bg-black py-12" role="contentinfo">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-400">
+      
       <div>
-        <p class="font-semibold text-white mb-2">TGG - Holding</p>
-        <p>Hamburg · Deutschland</p>
+        <p class="font-semibold text-white mb-2">TGG Holding</p>
+        <address class="not-italic">
+          <p>Hamburg · Deutschland</p>
+        </address>
       </div>
-      <div>
+      
+      <nav aria-label="Footer Navigation">
         <p class="font-semibold text-white mb-2">Links</p>
         <ul class="space-y-1">
-          <li>Impressum</li>
-          <li>Datenschutz</li>
-          <li>Kontakt</li>
+          <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
+          <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>
+          <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
         </ul>
-      </div>
+      </nav>
+      
       <div>
-        <p class="font-semibold text-white mb-2">© 2026</p>
-        <p>Urheberrechtlich geshützt</p>
+        <p class="font-semibold text-white mb-2">© 2026 TGG Holding</p>
+        <p>Urheberrechtlich geschützt</p>
       </div>
+      
     </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenuButton.setAttribute('aria-expanded', isOpen);
+      mobileMenuButton.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.setAttribute('aria-label', 'Menü öffnen');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+    
+    // Intersection Observer für Scroll-Animationen
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.smooth-appear');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Optional: Observer nach Animation stoppen für bessere Performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px' // Früher triggern
+      });
+      
+      sections.forEach(sec => observer.observe(sec));
+    });
+    
+    // Smooth Scroll für Navigation Links (Fallback für ältere Browser)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
